@@ -107,3 +107,15 @@ contactTile.onclick = function(e) {
 	}
 	
 };
+
+let icons = document.querySelectorAll(".icon");
+
+for (var i = icons.length - 1; i >= 0; i--) {
+	icons[i].addEventListener('mouseover', function() {
+		TweenMax.to(".icons", 2, {x: 50});
+	});
+}
+
+TweenMax.staggerFrom(".drawing-logo", 2, {drawSVG:0}, 0.1);
+TweenLite.fromTo(".drawing-logo", 1, {drawSVG:"0 5%"}, {drawSVG:"95% 100%"});
+

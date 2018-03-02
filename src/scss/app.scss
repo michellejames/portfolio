@@ -20,6 +20,10 @@ $turquoise: #45C1C0;
 
 @import 'reset';
 
+@font-face {
+  font-family: 'Adam Hand Writing Test';
+  src: url('../fonts/adamhandwritingtest.ttf')  format('truetype');
+}
 
 /* 1. Main Layout ================================= */
 
@@ -28,8 +32,7 @@ $turquoise: #45C1C0;
 }
 
 body {
-	//background: $lightpink;
-	background:$white;
+	background: $white;
 	overflow: hidden;
 }
 
@@ -190,7 +193,7 @@ body {
 	}
 
 	.logo {
-		background-image: url(../img/logo.svg);
+		//background-image: url(../img/logo.svg);
 		background-repeat: no-repeat;
 		background-position: center;
 		position: absolute;
@@ -201,15 +204,20 @@ body {
 		height: 20vh;
 
 		@media screen and (min-width: 600px) {
-			position: absolute;
-			width: 12.109375%;
-			height: 7.75%;
-			bottom: 0%;
-			right: 0%;
+			width: 30%;
+			height: 40%;
+		    top: 55%;
+	        left: 65%;
 			z-index: 5;
-			// transform: rotate(30deg);
-			transform: none;
+			transform: rotate(30deg);
 		}
+
+		@media screen and (min-width: 800px) {
+			top: 45%;
+		    left: 60%;
+		}
+
+
 	}
 
 	.cat-reaching {
@@ -238,6 +246,16 @@ body {
 
 		@media screen and (min-width: 600px) {
 			display: block;
+			color: $blue;
+
+			a {
+				color: $blue;
+				transition: .2s;
+
+				&:hover {
+					color: $pink;
+				}
+			}
 		}
 			
 	}
@@ -248,7 +266,7 @@ body {
 	margin: 0.5%;
 	margin-bottom: 0.25%;
 	position: relative;
-	background: $pink;
+	background: $turquoise;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -258,13 +276,12 @@ body {
 		width: 49.25%;
 		height: 49.25vh;
 		position: relative;
-		background: $pink;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
 		align-items: flex-end;
 		margin-left: 0.25%;
-		margin-bottom: 0.25vh;
+		margin-bottom: 0.5vh;
 
 		&.active2 {
 			width: 99%;
@@ -354,7 +371,7 @@ body {
 
 .square3 {
 
-	background: $blue;
+	background: $pink;
 	display: flex;
 	justify-content: flex-end;
 	position: relative;
@@ -364,7 +381,6 @@ body {
 	@media screen and (min-width: 600px) {
 		width: 49.25%;
 		height: 49.25vh;
-		background: $blue;
 		display: flex;
 		justify-content: flex-end;
 		position: relative;
@@ -408,7 +424,7 @@ body {
 
 .square4 {
 
-	background: $turquoise;
+	background: $blue;
 	position: relative;
 	width: 99%;
 	margin: 0.5%;
@@ -417,7 +433,6 @@ body {
 	@media screen and (min-width: 600px) {
 		width: 49.25%;
 		height: 49.25vh;
-		background: $turquoise;
 		position: relative;
 		margin-left: 0.25%;
 		margin-top: 0.25vh;
