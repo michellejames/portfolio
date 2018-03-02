@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1433 6232.109 44 42.837">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #000;
+      }
+
+      .cls-2 {
+        font-size: 12px;
+        font-family: HelveticaNeue-Bold, Helvetica Neue;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_290" data-name="Group 290" transform="translate(-1488 5763)">
+    <g id="Group_47" data-name="Group 47" transform="translate(-386.251 645.537) rotate(-90)">
+      <g id="Rectangle_37" data-name="Rectangle 37" class="cls-1" transform="translate(176.428 449.636) rotate(90)">
+        <rect class="cls-3" width="27.517" height="18.828"/>
+        <rect class="cls-4" x="0.5" y="0.5" width="26.517" height="17.828"/>
+      </g>
+      <path id="Path_30" data-name="Path 30" class="cls-1" d="M-2262.062-2541.86a16.757,16.757,0,0,1,8.478-2.7c4.579,0,9.837,2.7,9.837,2.7Z" transform="translate(-2388.003 2716.405) rotate(90)"/>
+    </g>
+    <text id="contact" class="cls-2" transform="translate(55 508.946)"><tspan x="0" y="0">contact</tspan></text>
+  </g>
+</svg>

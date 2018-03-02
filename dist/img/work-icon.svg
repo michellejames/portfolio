@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1425 6150.912 29 44.035">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 12px;
+        font-family: HelveticaNeue-Bold, Helvetica Neue;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #000;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_289" data-name="Group 289" transform="translate(-1488 5763)">
+    <text id="work" class="cls-1" transform="translate(63 428.946)"><tspan x="0" y="0">work</tspan></text>
+    <g id="Group_48" data-name="Group 48" transform="translate(-532.483 564.34) rotate(-90)">
+      <g id="Rectangle_36" data-name="Rectangle 36" class="cls-2" transform="translate(176.428 595.911) rotate(90)">
+        <rect class="cls-3" width="11" height="6"/>
+        <rect class="cls-4" x="0.5" y="0.5" width="10" height="5"/>
+      </g>
+      <g id="Rectangle_36-2" data-name="Rectangle 36" class="cls-2" transform="translate(176.428 610.911) rotate(90)">
+        <rect class="cls-3" width="11" height="6"/>
+        <rect class="cls-4" x="0.5" y="0.5" width="10" height="5"/>
+      </g>
+      <g id="Rectangle_36-3" data-name="Rectangle 36" class="cls-2" transform="translate(167.428 595.911) rotate(90)">
+        <rect class="cls-3" width="11" height="6"/>
+        <rect class="cls-4" x="0.5" y="0.5" width="10" height="5"/>
+      </g>
+      <g id="Rectangle_36-4" data-name="Rectangle 36" class="cls-2" transform="translate(167.428 610.911) rotate(90)">
+        <rect class="cls-3" width="11" height="6"/>
+        <rect class="cls-4" x="0.5" y="0.5" width="10" height="5"/>
+      </g>
+      <g id="Rectangle_36-5" data-name="Rectangle 36" class="cls-2" transform="translate(158.428 595.911) rotate(90)">
+        <rect class="cls-3" width="11" height="6"/>
+        <rect class="cls-4" x="0.5" y="0.5" width="10" height="5"/>
+      </g>
+      <g id="Rectangle_36-6" data-name="Rectangle 36" class="cls-2" transform="translate(158.428 610.911) rotate(90)">
+        <rect class="cls-3" width="11" height="6"/>
+        <rect class="cls-4" x="0.5" y="0.5" width="10" height="5"/>
+      </g>
+    </g>
+  </g>
+</svg>
