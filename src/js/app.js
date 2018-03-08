@@ -10,7 +10,9 @@ let squareTitleWork = document.querySelector(".square-title-work");
 let squareTitleAbout = document.querySelector(".square-title-about");
 let squareTitleContact = document.querySelector(".square-title-contact");
 let allSquares = document.querySelector(".squares");
-let navbar = document.querySelector(".navbar");
+let navbarWork = document.querySelector(".navbar-work");
+let navbarAbout = document.querySelector(".navbar-about");
+let navbarContact = document.querySelector(".navbar-contact");
 let portfolio = document.querySelector(".portfolio");
 let contact = document.querySelector(".contact");
 let aboutMe = document.querySelector(".about-me");
@@ -18,11 +20,14 @@ let squareOne = document.querySelector(".square1");
 let squareTwo = document.querySelector(".square2"); 
 let squareThree = document.querySelector(".square3"); 
 let squareFour = document.querySelector(".square4"); 
+let logoDesktop = document.querySelector(".logo-desktop");
 
 const breakpoint = window.matchMedia( "(min-width: 600px)" );
 
 workTile.onclick = function(e) {
 	e.preventDefault();
+
+	logoDesktop.classList.toggle("active");
 
 	if (breakpoint.matches) {
 	  if (!squareTwo.classList.contains("first-square")) {
@@ -34,12 +39,17 @@ workTile.onclick = function(e) {
 			squareTwo.classList.remove("first-square");
 		}
 
+		// let timeline = new TimelineLite();
+		// timeline.to((allSquares), 2, {scale: 1, rotation: 0});
+		// timeline.to((allSquares), 2, {scale: 2, top: "50%"});
+
+
 		portfolio.classList.toggle("active");
 
 		this.classList.toggle("active2");
 		allSquares.classList.toggle("active");
-		navbar.classList.toggle("active");
-		squareTitleWork.classList.toggle("active");
+		squareTitleWork.classList.toggle("activeTitleWork");
+		navbarWork.classList.toggle("active");
 
 		squareOne.classList.toggle("active1");
 		squareTwo.classList.toggle("active2");
@@ -47,12 +57,17 @@ workTile.onclick = function(e) {
 		squareFour.classList.toggle("active4");
 	} else {
 		console.log("test");
+		let portfolioMobile = document.querySelector(".portfolio-mobile");
+		portfolioMobile.classList.toggle("active");
 	}
 };
 
 
 aboutTile.onclick = function(e) {
 	e.preventDefault();
+	
+	logoDesktop.classList.toggle("active");
+
 	if (breakpoint.matches) {
 		if (!squareThree.classList.contains("first-square")) {
 			squareOne.classList.remove("first-square");
@@ -67,20 +82,25 @@ aboutTile.onclick = function(e) {
 
 		this.classList.toggle("active3");
 		allSquares.classList.toggle("active");
-		navbar.classList.toggle("active");
-		squareTitleAbout.classList.toggle("active");
+		squareTitleAbout.classList.toggle("activeTitleAbout");
+		navbarAbout.classList.toggle("active");
 
 		squareOne.classList.toggle("active1");
 		squareTwo.classList.toggle("active2");
 		squareThree.classList.toggle("active3");
 		squareFour.classList.toggle("active4");
 	} else {
-		console.log("test");
+		console.log("test active");
+		let aboutMeMobile = document.querySelector(".about-me-mobile");
+		aboutMeMobile.classList.toggle("active");
 	}
 };
 
 contactTile.onclick = function(e) {
 	e.preventDefault();
+
+	logoDesktop.classList.toggle("active");
+
 	if (breakpoint.matches) {
 		if (!squareFour.classList.contains("first-square")) {
 			squareOne.classList.remove("first-square");
@@ -95,15 +115,17 @@ contactTile.onclick = function(e) {
 
 		this.classList.toggle("active2");
 		allSquares.classList.toggle("active");
-		navbar.classList.toggle("active");
-		squareTitleWork.classList.toggle("active");
-		
+		squareTitleContact.classList.toggle("activeTitleContact");
+		navbarContact.classList.toggle("active");
+
 		squareOne.classList.toggle("active1");
 		squareTwo.classList.toggle("active2");
 		squareThree.classList.toggle("active3");
 		squareFour.classList.toggle("active4");
 	} else {
 		console.log("test");
+		let contactMobile = document.querySelector(".contact-mobile");
+		contactMobile.classList.toggle("active");
 	}
 	
 };
@@ -116,6 +138,5 @@ for (var i = icons.length - 1; i >= 0; i--) {
 	});
 }
 
-TweenMax.staggerFrom(".drawing-logo", 2, {drawSVG:0}, 0.1);
-TweenLite.fromTo(".drawing-logo", 1, {drawSVG:"0 5%"}, {drawSVG:"95% 100%"});
+TweenMax.staggerFrom("#webdevshelly path", 2, {x: 50}, 0.1);
 

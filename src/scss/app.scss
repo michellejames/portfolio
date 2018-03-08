@@ -17,6 +17,7 @@ $white: #fff;
 $pink: #D31682;
 $blue: #151E46;
 $turquoise: #45C1C0;
+$lightpurple: #585F7B;
 
 @import 'reset';
 
@@ -33,7 +34,34 @@ $turquoise: #45C1C0;
 
 body {
 	background: $white;
-	overflow: hidden;
+
+	@media screen and (min-width: 600px) {
+		overflow: hidden;
+	}
+}
+
+.logo-desktop {
+	display: none;
+
+	&.active {
+		display: none;
+	}
+
+	@media screen and (min-width: 600px) {
+		display: block;
+		position: absolute;
+		z-index: 5;
+		top: 30%;
+		left: 3%;
+		width: 30vw;
+		transform: rotate(-15deg);
+	}
+	@media screen and (min-width: 700px) {
+		top: 20%;
+	}
+	@media screen and (min-width: 900px) {
+		top: 10%;
+	}
 }
 
 .squares {
@@ -72,10 +100,6 @@ body {
 			background: $white;
 			display: none;
 
-			&.active {
-				display: block;
-			}
-
 			.menu {
 				width: 100%;
 				height: 100%;
@@ -109,6 +133,15 @@ body {
 				}
 			}
 		}
+
+		.navbar-work,
+		.navbar-about,
+		.navbar-contact {
+
+			&.active {
+				display: block;
+			}
+		}
 	}
 
 	& a {
@@ -138,11 +171,28 @@ body {
 			margin: 10px;
 			font-size: 1rem;
 
-			&.active {
-				color: $pink;
+			&.activeTitleWork {
+				color: $turquoise;
 				position: absolute;
 				bottom: 5%;
 				left: 5%;
+				font-size: 2rem;
+			}
+
+			&.activeTitleAbout {
+				color: $pink;
+				position: absolute;
+				bottom: 5%;
+				right: 5%;
+				font-size: 2rem;
+			}
+
+			&.activeTitleContact {
+				color: $blue;
+				position: absolute;
+				top: 5%;
+				left: 5%;
+				font-size: 2rem;
 			}
 		}
 
@@ -192,32 +242,20 @@ body {
 		}
 	}
 
-	.logo {
-		//background-image: url(../img/logo.svg);
-		background-repeat: no-repeat;
-		background-position: center;
+	.logo-mobile {
+		width: 50vw;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 50%;
-		height: 20vh;
+		transform: translate(-50%, -50%) rotate(-15deg);
 
 		@media screen and (min-width: 600px) {
-			width: 30%;
-			height: 40%;
-		    top: 55%;
-	        left: 65%;
-			z-index: 5;
-			transform: rotate(30deg);
+			display: none;
 		}
 
-		@media screen and (min-width: 800px) {
-			top: 45%;
-		    left: 60%;
+		@media screen and (min-width: 700px) {
+			
 		}
-
-
 	}
 
 	.cat-reaching {
@@ -388,36 +426,349 @@ body {
 		margin-top: 0.25vh;
 
 		&.active3 {
+			flex-direction: row-reverse;
 			width: 99%;
 			height: 98.5vh;
 			margin-left: 0.50%;
 			margin-right: 0.25%;
 		}
+
+		// #about-tile {
+		// 	align-self: flex-start;
+		// }
 	}
 
 	.about-me {
-		display: flex;
-		flex-direction: column;
-		position: absolute;
-		color: $white;
-		top: 5%;
-		right: 5%;
-		width: 50%;
+		position: relative;
 		display: none;
 
 		@media screen and (min-width: 600px) {
+			max-height: 100%;
+		    overflow: auto;
 			display: flex;
 			flex-direction: column;
-			position: absolute;
-			color: $white;
-			top: 5%;
-			right: 5%;
-			width: 50%;
+			padding: 5%;
 			display: none;
+			color: $white;
+			font-family: 'Poppins', sans-serif;
+			line-height: 30px;
+			width: 80%;
+			display: none;
+			// padding-bottom: 5%;
 
 			&.active {
 				display: flex;
 			}
+		}
+
+		.about-start {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+
+		.about-me-list {
+			margin-bottom: 5%;
+			line-height: 20px;
+			list-style: initial;
+			list-style-image: url(../img/furball_white.svg);
+			padding-left: 5%;
+		}
+
+		.shelly-image {
+			background-image: url(../img/shelly-image.jpg);
+			background-repeat: no-repeat;
+			background-position: center top;
+			//background-size: cover;
+			width: 40%;
+			height: 50vh;
+			//margin-left: 10%;
+			// margin-bottom: 10%;
+			border: 2px solid white;
+			// transform: rotate(-5deg);
+		}
+	
+		.about-me-text {
+			// color: $white;
+			// font-family: 'Poppins', sans-serif;
+			// line-height: 30px;
+
+			& h1{
+				font-size: 2rem;
+				margin-bottom: 5%;
+			}
+
+			& h2,
+			& p {
+				margin-bottom: 5%;
+			}
+		}
+
+		.skillset {
+			display: flex;
+			justify-content: center; 
+			margin-bottom: 5%;
+			//flex-wrap: wrap;
+
+
+			.skill {
+				width: 40%;
+				height: 10vh;
+				background-repeat: no-repeat;
+			}
+
+			.html {
+				background-image: url(../img/skills/html5.svg);
+			}
+
+			.css {
+				background-image: url(../img/skills/css3.svg);
+			}
+			.js {
+				background-image: url(../img/skills/javascript.svg);
+			}
+
+			.vue {
+				background-image: url(../img/skills/vuejs.svg);
+			}
+
+			.node {
+				background-image: url(../img/skills/nodejs.svg);
+			}
+
+			.react {
+				background-image: url(../img/skills/react.svg);
+			}
+
+			.php {
+				background-image: url(../img/skills/php.svg);
+			}
+		}
+	}
+}
+
+.portfolio-mobile {
+
+	position: relative;
+	background: $turquoise;
+	padding: 5%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	display: none;
+
+	.piece {
+		width: 100%;
+		height: 30vh;
+		background: white;
+		border: 2px solid white;
+		background-image: url(../img/solange.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		position: relative;
+		margin-bottom: 5%;
+
+		.project-title {
+			display: none;
+		}
+
+		&:hover {
+			.overlay {
+				width: 90%;
+				height: 90%;
+				background-color: #38123C;
+				opacity: .5;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.project-title {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 2;
+				color: $white;
+				opacity: 1;
+				font-size: 1.2rem;
+				width: 90%;
+				text-align: center;
+				display: inline-block;
+				font-family: 'Poppins', sans-serif;
+			}
+		}
+	}
+
+	.piece1 {
+		position: relative;
+	}
+
+	&.active {
+		display: block;
+	}
+}
+
+.contact-mobile {
+	display: flex;
+	flex-direction: column;
+	background: $blue;
+	padding: 5%;
+	color: $white;
+	font-family: 'Poppins', sans-serif;
+	line-height: 30px;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+
+
+	h1 {
+		//position: absolute;
+		top: 5%;
+		left: 5%;
+		font-size: 1.3rem;
+		margin-bottom: 5%;
+	}
+
+	.contact-form {
+		color: $white;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		margin-bottom: 5vh;
+
+		input,
+		textarea {
+			background: $lightpurple;
+			border: none;
+			width: 90vw;
+			height: 5vh;
+			color: $white;
+			font-size: 1.5rem;
+			padding-left: 2%;
+		}
+
+		textarea {
+			height: 20vh;
+		}
+
+		label {
+			text-align: right;
+			margin-right: 5%;
+		}
+
+		.label {
+		}
+
+		.form-button {
+			font-size: 1.5rem;
+			padding: 1% 5%;
+			border: 2px solid $turquoise;
+			margin-top: 5%;
+
+			&:hover {
+				color: $white;
+				background: $pink;
+			}
+
+
+		}
+
+	}
+}
+
+.about-me-mobile {
+	display: flex;
+	flex-direction: column;
+	background: $pink;
+	padding: 5%;
+	display: none;
+	color: $white;
+	font-family: 'Poppins', sans-serif;
+	line-height: 30px;
+
+	&.active {
+		display: block;
+	}
+
+	.about-me-list {
+		margin-bottom: 5%;
+		line-height: 20px;
+		list-style: initial;
+		list-style-image: url(../img/furball_white.svg);
+		padding-left: 5%;
+	}
+
+	.shelly-image {
+		background-image: url(../img/shelly-image.jpg);
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: cover;
+		width: 80%;
+		height: 50vh;
+		margin-left: 10%;
+		margin-bottom: 10%;
+		border: 2px solid white;
+		transform: rotate(-5deg);
+	}
+
+	.about-me-text {
+		// color: $white;
+		// font-family: 'Poppins', sans-serif;
+		// line-height: 30px;
+
+		& h1{
+			font-size: 2rem;
+			margin-bottom: 5%;
+		}
+
+		& h2,
+		& p {
+			margin-bottom: 5%;
+		}
+	}
+
+	.skillset {
+		display: flex;
+		justify-content: center; 
+		//flex-wrap: wrap;
+
+
+		.skill {
+			width: 40%;
+			height: 10vh;
+			background-repeat: no-repeat;
+		}
+
+		.html {
+			background-image: url(../img/skills/html5.svg);
+		}
+
+		.css {
+			background-image: url(../img/skills/css3.svg);
+		}
+		.js {
+			background-image: url(../img/skills/javascript.svg);
+		}
+
+		.vue {
+			background-image: url(../img/skills/vuejs.svg);
+		}
+
+		.node {
+			background-image: url(../img/skills/nodejs.svg);
+		}
+
+		.react {
+			background-image: url(../img/skills/react.svg);
+		}
+
+		.php {
+			background-image: url(../img/skills/php.svg);
 		}
 	}
 }
@@ -444,15 +795,28 @@ body {
 	}
 
 	.contact {
+		// display: flex;
+		// flex-direction: column;
+		// //position: absolute;
+		// display: none;
+		// color: $white;
+		// top: 10%;
+		// left: 5%;
+		// width: 60%;
+		// display: none;
+		// margin-left: 20%;
+
+		position: relative;
+		width: 100%;
+		height: 80vh;
 		display: flex;
 		flex-direction: column;
-		position: absolute;
+		//flex-wrap: wrap;
+		justify-content: space-between;
+		margin-left: 20%;
 		display: none;
 		color: $white;
-		top: 10%;
-		left: 5%;
-		width: 50%;
-		display: none;
+		font-family: 'Poppins', sans-serif;
 
 		@media screen and (min-width: 600px) {
 			display: flex;
@@ -460,20 +824,73 @@ body {
 			position: absolute;
 			display: none;
 			color: $white;
-			top: 10%;
-			left: 5%;
-			width: 50%;
+			//top: 10%;
+			//left: 5%;
+			width: 80%;
+			height: 100vh;
+			top: 0;
 			display: none;
 
 			&.active {
 				display: flex;
 			}
+
+			h1 {
+				position: absolute;
+				top: 10%;
+				left: 5%;
+				font-size: 2rem;
+			}
+		}
+
+		.contact-form {
+			color: $white;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			height: 80vh;
+			margin-top: 20vh;
+
+			input,
+			textarea {
+				background: $lightpurple;
+				border: none;
+				width: 30vw;
+				height: 5vh;
+				color: $white;
+				font-size: 1.5rem;
+				padding-left: 2%;
+			}
+
+			textarea {
+				height: 20vh;
+			}
+
+			label {
+				text-align: right;
+				margin-right: 5%;
+			}
+
+			.label {
+			}
+
+			.form-button {
+				font-size: 1.5rem;
+				padding: 1% 5%;
+				border: 2px solid $turquoise;
+
+				&:hover {
+					color: $white;
+					background: $pink;
+				}
+
+
+			}
+
 		}
 	}
 }
-
-
-
 
 
 
